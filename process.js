@@ -35,7 +35,6 @@ const url = `${BASE_URL}/${ROUTE}/?base64_encoded=true`;
     const content = await zip.generateAsync({ type: "base64" });
 
     try {
-      console.time('call');  
       const response = await axios.post(url, {
         enable_network: true,
         language_id: 89,
