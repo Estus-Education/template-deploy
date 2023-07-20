@@ -1,6 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox");
 
-require('./build.js');
+// require('./build.js');
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */

@@ -24,28 +24,17 @@ async function writeCache(){
       'linux-amd64',
     );
 
-    await Promise.all(
-      [
-        fs.copyFile(
-            `${srcSolc}/list.json`, 
-            `${destSolc}/list.json`, 
-            () => {}
-        ),
-        fs.copyFile(
-          `${srcSolc}/${process.argv[2]}`,
-          `${destSolc}/${process.argv[2]}`,
-          () => {}
-        ),
-      ]
-    )
+    await Promise.all([
+      fs.copyFile(`${srcSolc}/list.json`, `${destSolc}/list.json`, () => {}),
+      fs.copyFile(
+        `${srcSolc}/${process.argv[2]}`,
+        `${destSolc}/${process.argv[2]}`,
+        () => {}
+      ),
+      chmodr(destSolc, 0o777, (err) => {}),
+    ]);
 
-    chmodr(destSolc, 0o777, (err) => {
-        if (err) {
-            console.log('error');
-        } else {
-            run('test');
-        }
-    }); 
+    run('test');
 }
 
 writeCache()
