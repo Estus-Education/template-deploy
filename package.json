@@ -1,0 +1,21 @@
+{
+  "name": "alchemy-ethereum-bootcamp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "hardhat test ./src/test.js"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.1",
+    "chai": "^4.3.7",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.12.6"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "chmodr": "^1.2.0",
+    "ethers": "^5.7.2",
+    "jszip": "^3.10.1"
+  }
+}
